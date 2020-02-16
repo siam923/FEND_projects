@@ -1,6 +1,6 @@
 /* Global Variables */
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
-const apiKey = "6e12c16e77380c141fa2c74d03fd56f6";
+const apiKey = "your key";
 
 /* API request example:
   api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid=key
