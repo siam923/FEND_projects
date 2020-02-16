@@ -1,0 +1,157 @@
+body{
+  font-family: 'Montserrat', serif;
+  margin: auto;
+  width: 90%;
+}
+
+
+
+.card{
+  border: 3px solid lightcyan;
+  width: auto;
+  box-shadow: 8px 8px 6px #888888;
+  border-radius: 4px;
+}
+
+.container{
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px minmax(500px, 1fr) 40px;
+  grid-gap: 15px;
+  grid-template-areas:
+    "hd hd hd"
+    "main main main"
+    "ft ft ft";
+  grid-auto-flow: row;
+}
+
+.head{
+  grid-area: hd;
+  /* background-color: #e9e9e9; */
+}
+
+.content{
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+  margin-bottom: 30px;
+}
+
+.footer{
+  grid-area: ft;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.post{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  padding:14px 14px 8px 14px;
+}
+
+.nav{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) 3fr 1fr;
+  grid-template-areas: "lg it sr";
+}
+
+.logo{
+  font-size: 24px;
+  font-weight: bold;
+  color: #606c76;
+  grid-area: lg;
+
+}
+
+.nav-item{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  grid-area: it;
+  width: 250px;
+}
+
+.search{
+  grid-area:sr;
+  margin:auto;
+  width:100%;
+}
+.search input[type-text]{
+  border: 1px solid #ccc;
+}
+
+.item{
+  padding: 4px 10px;
+  font-size: 18px;
+}
+
+.item > a:link{
+  text-decoration: none;
+  color: black;
+}
+
+.item a:hover{
+  color: #606c76
+}
+
+
+@media screen and (max-width:700px) {
+  .nav{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "lg"
+      "it"
+      "sr";
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .nav-item{
+    grid-area:it;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .serach{
+    grid-area: sr;
+  }
+
+}
+
+
+@media screen and (min-width:701px) and (max-width:900px) {
+  .nav{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: auto;
+    grid-template-areas:
+      "lg it it"
+      "sr sr sr";
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .nav-item{
+    grid-area:it;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .serach{
+    grid-area: sr;
+  }
+
+}
